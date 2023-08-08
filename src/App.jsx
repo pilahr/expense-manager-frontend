@@ -8,7 +8,7 @@ import Report from "./pages/Report/Report";
 import Profile from "./pages/Profile/Profile";
 
 const App = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(true);
   return (
     <>
       <Router>
