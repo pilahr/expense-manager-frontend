@@ -11,6 +11,9 @@ const Button = ({ buttonText, onClick, func }) => {
     case "add":
       buttonStyle += " add";
       break;
+    case "tryAgain":
+      buttonStyle += " tryAgain";
+      break;
     default:
       buttonStyle = "";
       break;

@@ -7,8 +7,9 @@
   align-items: center;
   background-color: $color-white;
   opacity: 0.8;
-  margin: 20px;
+  margin: 0 20px;
   padding: 40px;
+  margin-top: 80px;
   border-radius: 5px;
   box-shadow: 0 0 3px $color-black;
 
@@ -29,6 +30,6 @@
   }
 
   &__error-msg {
-    color: $text-white;
+    color: $text-gray;
   }
 }
