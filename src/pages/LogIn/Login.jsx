@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import Heading from "../../components/Heading/Heading";
+import Button from "../../components/Button/Button";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -30,6 +32,9 @@ const Login = ({ setUser }) => {
   return (
     <div className="logIn-page">
       <div>
+        <Heading title="£SPENT" />
+      </div>
+      <div>
         <LoginForm
           email={email}
           password={password}
@@ -38,6 +43,18 @@ const Login = ({ setUser }) => {
           hideError={hideError}
           getUser={getUser}
         />
+        {errorMessage && (
+          <div className="login-popUp-msg">
+            <h1 className="login-popUp-msg__text">
+              Please Enter a valid email and password!
+            </h1>
+            <Button
+              buttonText="Try again"
+              onClick={hideError}
+              func="tryAgain"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

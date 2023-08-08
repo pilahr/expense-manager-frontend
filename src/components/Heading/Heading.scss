@@ -1,0 +1,9 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.heading {
+  font-family: $secondary-font;
+  font-size: 28px;
+  color: $text-black;
+  padding: 30px 20px;
+}
