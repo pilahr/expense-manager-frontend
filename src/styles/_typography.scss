@@ -1,0 +1,62 @@
+@use "./variables.scss" as *;
+
+// font "Jaldi", "Inria Sans", "Inter"
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inria+Sans&family=Inter&family=Jaldi:wght@400;700&display=swap');
+
+* {
+  font-family: "Jaldi", Arial, Helvetica, sans-serif;
+  color: $text-black;
+}
+
+$primary-font: "Jaldi";
+$secondary-font: "Inria Sans";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  display: inline-block;
+  width: 100%;
+}
+
+button {
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+  :root {
+    font-size: 110%;
+  }
+}
+
+@media screen and (min-width: $desktop-breakpoint) {
+  :root {
+    font-size: 120%;
+  }
+}
+
+@media screen and (min-width: $large-desktop-breakpoint) {
+  :root {
+    font-size: 140%;
+  }
+}

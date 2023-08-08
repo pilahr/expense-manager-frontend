@@ -1,0 +1,32 @@
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+$large-desktop-breakpoint: 1440px;
+
+$text-black: rgb(19, 18, 18);
+$text-gray: rgb(141, 141, 141);
+$text-white: rgb(255, 255, 255);
+
+$color-white: white;
+$color-white-translucent: rgba(255, 255, 255, 0.2);
+$color-gray: rgb(178, 174, 174, 0.5);
+$color-dark-gray: rgba(86, 85, 85, 0.5);
+$color-black: black;
+$color-black-translucent: rgba(0, 0, 0, 0.8);
+$color-dark-blue:rgb(9, 9, 56);
+$color-dark-blue-translucent:rgb(9, 9, 56, 0.9);
+
+$color-purple: #c898de;
+$color-light-blue: #96d9e8;
+$color-green: #b7df85;
+$color-yellow: #fdde72;
+$color-pink: #f0ace1;
+$color-red: #ed8e8e;
+$color-bright-green: #87e490;
+$color-dark-purple: #889af8;
+
+$color-search-bar-bg:#F5F5F5;
+$color-background:#F5F5F5;
+
+* {
+  text-decoration: none;
+}
