@@ -1,6 +1,7 @@
 import React from "react";
 import "./Profile.scss";
 import Heading from "../../components/Heading/Heading";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Profile = () => {
   return (
@@ -8,6 +9,7 @@ const Profile = () => {
       <div>
         <Heading title="Profile"/>
       </div>
+      <div><NavBar /></div>
     </div>
   );
 };
