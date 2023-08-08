@@ -1,0 +1,23 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.form-button {
+  color: $color-white;
+  font-family: $secondary-font;
+  font-weight: 600;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  width: 270px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.login {
+  background-color: $color-red;
+}
+
+.add {
+  background-color: $color-red;
+}

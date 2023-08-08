@@ -1,0 +1,34 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-white;
+  opacity: 0.8;
+  margin: 20px;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px $color-black;
+
+  &__heading {
+    color: $text-gray;
+    font-family: $secondary-font;
+  }
+
+  &__input {
+    margin: 10px 0px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    font-family: $primary-font;
+    background-color: $color-background;
+  }
+
+  &__error-msg {
+    color: $text-white;
+  }
+}
