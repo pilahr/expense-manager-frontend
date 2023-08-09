@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.scss";
 import Heading from "../../components/Heading/Heading";
 import NavBar from "../../components/NavBar/NavBar";
@@ -9,7 +9,7 @@ import WeeklyGraph from "../../components/WeeklyGraph/WeeklyGraph";
 const Home = () => {
   const chartData = [45, 30, 12, 55, 70, 20, 30];
 
-  const [data, setData] = useState({
+  const weeklyChartFormat = {
     labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     datasets: [
       {
@@ -20,7 +20,8 @@ const Home = () => {
         hoverBackgroundColor: "#FFBF00",
       },
     ],
-  });
+  };
+
 
   return (
     <div className="home-page">
@@ -31,7 +32,7 @@ const Home = () => {
         <WelcomeUser />
         <TotalSpend />
         <div>
-          <WeeklyGraph chartData={data} />
+          <WeeklyGraph chartData={weeklyChartFormat} />
         </div>
       </div>
       <div>
