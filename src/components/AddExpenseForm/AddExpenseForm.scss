@@ -1,0 +1,66 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.add-expense-form {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white-translucent;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+
+  &__heading {
+    font-family: $hand-writing-font;
+  }
+
+  &__input {
+    border: none;
+    border-radius: 5px;
+    background-color: $color-white-translucent;
+    border-bottom: 2px solid $color-gray;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 1rem;
+  }
+
+  &__label {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+
+  &__select {
+    border: none;
+    background-color: $color-background;
+    border-radius: 5px;
+    height: 35px;
+  }
+
+  &__button {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.dmy-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        &--select {
+            border: none;
+            background-color: $color-background;
+            border-radius: 5px;
+            height: 35px;
+            width: 100px;
+            text-align: center;
+        }
+    }
+
+}
