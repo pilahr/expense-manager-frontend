@@ -9,6 +9,7 @@ import Profile from "./pages/Profile/Profile";
 
 const App = () => {
   const [user, setUser] = useState(true);
+
   return (
     <>
       <Router>
