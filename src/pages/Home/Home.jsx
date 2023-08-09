@@ -6,6 +6,9 @@ import WelcomeUser from "../../components/WelcomeUser/WelcomeUser";
 import TotalSpend from "../../components/TotalSpend/TotalSpend";
 import WeeklyGraph from "../../components/WeeklyGraph/WeeklyGraph";
 
+// eslint-disable-next-line
+import { Chart as ChartJs } from "chart.js/auto";
+
 const Home = () => {
   const chartData = [45, 30, 12, 55, 70, 20, 30];
 
@@ -21,7 +24,6 @@ const Home = () => {
       },
     ],
   };
-
 
   return (
     <div className="home-page">
