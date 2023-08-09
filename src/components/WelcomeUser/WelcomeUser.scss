@@ -2,10 +2,10 @@
 @use "../../styles/variables" as *;
 
 .welcome-user {
-    margin: 0 20px;
+    // margin: 0 20px;
     padding: 10px;
-    background-color: $color-white-translucent;
-    border-radius: 10px;
+    // background-color: $color-white-translucent;
+    // border-radius: 10px;
     &__text1 {
         font-family: "Borel";
     }
