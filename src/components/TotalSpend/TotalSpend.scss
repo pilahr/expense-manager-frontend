@@ -1,0 +1,20 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.total-spend {
+    margin: 10px 20px;
+    padding: 10px;
+    background-color: $color-white-translucent;
+    border-radius: 10px;
+
+    &__text1 {
+        text-align: center;
+        color: $text-gray;
+    }
+
+    &__text2 {
+        text-align: center;
+        font-size: 3rem;
+        font-family: $secondary-font;
+    }
+}
