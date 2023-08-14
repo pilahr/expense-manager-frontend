@@ -1,14 +1,21 @@
 import React from "react";
 import "./ExpenseCard.scss";
-import CoffeeIcon from "../../assets/icons/coffee.png";
 
-const ExpenseCard = ({ name, cost, category, date, month, year }) => {
+const ExpenseCard = ({
+  name,
+  cost,
+  category,
+  date,
+  month,
+  year,
+  iconStyle,
+}) => {
   const cleanedMonth = new Date(month).toDateString().split(" ")[1];
 
   return (
     <div className="expense-card">
       <div className="expense-card__icon">
-        <img className="expense-card__icon--icon" src={CoffeeIcon} alt="icon" />
+        <img className="expense-card__icon--icon" src={iconStyle} alt="icon" />
       </div>
       <div className="expense-card__text-container">
         <div className="expense-card__text-container--left">

@@ -6,6 +6,15 @@ import WelcomeUser from "../../components/WelcomeUser/WelcomeUser";
 import TotalSpend from "../../components/TotalSpend/TotalSpend";
 import WeeklyGraph from "../../components/WeeklyGraph/WeeklyGraph";
 import ExpenseCard from "../../components/ExpenseCard/ExpenseCard";
+import FoodIcon from "../../assets/icons/food.png";
+import SnackIcon from "../../assets/icons/snack.png";
+import CoffeeIcon from "../../assets/icons/coffee.png";
+import AlcoholIcon from "../../assets/icons/beer.png";
+import TransportIcon from "../../assets/icons/transportation.png";
+import EntertainmentIcon from "../../assets/icons/ticket.png";
+import ShoppingIcon from "../../assets/icons/shopping.png";
+import SubscriptionIcon from "../../assets/icons/subscription.png";
+
 // eslint-disable-next-line
 import { Chart as ChartJs } from "chart.js/auto";
 
@@ -19,8 +28,6 @@ const Home = ({ expense }) => {
         new Date(spend.month).toDateString().split(" ")[1] === thisMonth
     )
     .sort((a, b) => b.date - a.date);
-
-  console.log(recentlySpent);
 
   const chartData = [45, 30, 12, 55, 70, 20, 30];
 
@@ -54,6 +61,37 @@ const Home = ({ expense }) => {
             Recently Spent
           </h4>
           {recentlySpent.map((spending, index) => {
+            let iconStyle = "";
+            switch (spending.category) {
+              case "Food":
+                iconStyle += FoodIcon;
+                break;
+              case "Snack":
+                iconStyle += SnackIcon;
+                break;
+              case "Coffee":
+                iconStyle += CoffeeIcon;
+                break;
+              case "Alcohol Beverage":
+                iconStyle += AlcoholIcon;
+                break;
+              case "Transportation":
+                iconStyle += TransportIcon;
+                break;
+              case "Entertainment":
+                iconStyle += EntertainmentIcon;
+                break;
+              case "Shopping":
+                iconStyle += ShoppingIcon;
+                break;
+              case "Subscription":
+                iconStyle += SubscriptionIcon;
+                break;
+
+              default:
+                iconStyle += ShoppingIcon;
+                break;
+            }
             return (
               <ExpenseCard
                 key={index}
@@ -63,6 +101,7 @@ const Home = ({ expense }) => {
                 date={spending.date}
                 month={spending.month}
                 year={spending.year}
+                iconStyle={iconStyle}
               />
             );
           })}
