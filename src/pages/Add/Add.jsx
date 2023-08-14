@@ -6,28 +6,25 @@ import NavBar from "../../components/NavBar/NavBar";
 import AddExpenseForm from "../../components/AddExpenseForm/AddExpenseForm";
 
 const Add = ({ expense }) => {
-
   const navigate = useNavigate();
 
   const handleSubmit = async (expense) => {
-    //https://expense-manager-backend-seven.vercel.app/expenses
-    const result = await fetch(
-      "https://expense-manager-backend-seven.vercel.app/expense",
-      {
-        // const result = await fetch("http://localhost:8080/expense", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(expense),
-      }
-    );
+    // const result = await fetch(
+    //   "https://expense-manager-backend-seven.vercel.app/expense",
+    //   {
+    const result = await fetch("http://localhost:8080/expense", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expense),
+    });
 
     if (result.ok) {
       alert("Expense added");
       const expense = await result.json();
       console.log(expense);
-      navigate("/home");
+      navigate("/spending");
     } else {
       const message = await result.text();
       alert(message);

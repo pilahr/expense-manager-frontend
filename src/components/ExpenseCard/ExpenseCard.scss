@@ -1,0 +1,58 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.expense-card {
+  background-color: $color-white;
+  width: 320px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+
+    &--icon {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  &__text-container {
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &--left {
+      .expense-card-lt-h3 {
+        text-align: left;
+        font-family: $secondary-font;
+        color: $text-black;
+      }
+
+      .expense-card-lt-p {
+        text-align: left;
+        font-family: $secondary-font;
+        color: $text-gray;
+      }
+    }
+
+    &--right {
+      .expense-card-rt-h3 {
+        text-align: right;
+        font-family: $secondary-font;
+        color: $text-black;
+      }
+
+      .expense-card-rt-p {
+        text-align: right;
+        font-family: $secondary-font;
+        color: $text-gray;
+      }
+    }
+  }
+}
