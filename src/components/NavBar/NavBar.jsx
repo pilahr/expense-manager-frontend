@@ -5,7 +5,7 @@ import NavItem from "../NavItem/NavItem";
 import HomeIcon from "../../assets/icons/home.png";
 import AddIcon from "../../assets/icons/add.png";
 import ChartIcon from "../../assets/icons/pie-chart.png";
-import AccountIcon from "../../assets/icons/account.png";
+import CalendarIcon from "../../assets/icons/calendar.png";
 
 const NavBar = () => {
   return (
@@ -32,18 +32,18 @@ const NavBar = () => {
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "active" : ""
         }
-        to="/report"
+        to="/spending"
       >
-        <NavItem icon={ChartIcon} />
+        <NavItem icon={CalendarIcon} />
       </NavLink>
 
       <NavLink
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "active" : ""
         }
-        to="/profile"
+        to="/report"
       >
-        <NavItem icon={AccountIcon} />
+        <NavItem icon={ChartIcon} />
       </NavLink>
     </div>
   );
