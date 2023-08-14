@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddExpenseForm.scss";
 import Button from "../../components/Button/Button";
 
-const AddExpenseForm = () => {
+const AddExpenseForm = ({ expense, handleSubmit, defaultFormState }) => {
+  const [expenseData, setExpenseData] = useState(defaultFormState);
+
+  const handleValidation = (event) => {
+    event.preventDefault();
+    handleSubmit(expenseData);
+  };
+
   const categories = [
     "Food",
     "Snack",
@@ -48,14 +55,35 @@ const AddExpenseForm = () => {
   const years = getYear();
 
   return (
-    <div className="add-expense-form">
+    <form className="add-expense-form" onSubmit={handleValidation}>
       <h3 className="add-expense-form__heading">New Expense</h3>
+
       <label className="add-expense-form__label">Name</label>
-      <input className="add-expense-form__input" />
+      <input
+        className="add-expense-form__input"
+        type="text"
+        value={expense.name}
+        onInput={(event) =>
+          setExpenseData({ ...expenseData, name: event.target.value })
+        }
+      />
+
       <label className="add-expense-form__label">Cost</label>
-      <input className="add-expense-form__input" />
+      <input
+        className="add-expense-form__input"
+        value={expense.cost}
+        onInput={(event) =>
+          setExpenseData({ ...expenseData, cost: event.target.value })
+        }
+      />
+
       <label className="add-expense-form__label">Category</label>
-      <select className="add-expense-form__select">
+      <select
+        className="add-expense-form__select"
+        onChange={(event) =>
+          setExpenseData({ ...expenseData, category: event.target.value })
+        }
+      >
         <option>Please select the option</option>
         {categories.map((item, index) => (
           <option key={index}>{item}</option>
@@ -65,7 +93,12 @@ const AddExpenseForm = () => {
       <div className="dmy-block">
         <div className="dmy-block__block">
           <label className="add-expense-form__label">Date</label>
-          <select className="dmy-block__block--select">
+          <select
+            className="dmy-block__block--select"
+            onChange={(event) =>
+              setExpenseData({ ...expenseData, date: event.target.value })
+            }
+          >
             <option>Date</option>
             {dates.map((date, index) => (
               <option key={index}>{date}</option>
@@ -75,7 +108,12 @@ const AddExpenseForm = () => {
 
         <div className="dmy-block__block">
           <label className="add-expense-form__label">Month</label>
-          <select className="dmy-block__block--select">
+          <select
+            className="dmy-block__block--select"
+            onChange={(event) =>
+              setExpenseData({ ...expenseData, month: event.target.value })
+            }
+          >
             <option>Month</option>
             {months.map((month, index) => (
               <option key={index}>{month}</option>
@@ -85,7 +123,12 @@ const AddExpenseForm = () => {
 
         <div className="dmy-block__block">
           <label className="add-expense-form__label">Year</label>
-          <select className="dmy-block__block--select">
+          <select
+            className="dmy-block__block--select"
+            onChange={(event) =>
+              setExpenseData({ ...expenseData, year: event.target.value })
+            }
+          >
             <option>Year</option>
             {years.map((year, index) => (
               <option key={index}>{year}</option>
@@ -95,9 +138,9 @@ const AddExpenseForm = () => {
       </div>
 
       <div className="add-expense-form__button">
-        <Button buttonText="Add" func="add" onClick={getDate} />
+        <Button buttonText="Add" func="add" onClick={handleSubmit} />
       </div>
-    </div>
+    </form>
   );
 };
 
