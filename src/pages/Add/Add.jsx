@@ -1,45 +1,47 @@
 import React from "react";
 import "./Add.scss";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Heading from "../../components/Heading/Heading";
 import NavBar from "../../components/NavBar/NavBar";
 import AddExpenseForm from "../../components/AddExpenseForm/AddExpenseForm";
 
-const Add = (
-  // { expensesData }
-  ) => {
-  // const navigate = useNavigate();
+const Add = ({ expense }) => {
 
-  // const handleSubmit = async (expensesData) => {
-  //   const result = await fetch(
-  //     "https://my-journey-new-backend.vercel.app/holidays",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(expensesData),
-  //     }
-  //   );
+  const navigate = useNavigate();
 
-  //   if (result.ok) {
-  //     alert("Expense added");
-  //     const expensesData = await result.json();
-  //     navigate("/add");
-  //   } else {
-  //     const message = await result.text();
-  //     alert(message);
-  //   }
-  // };
+  const handleSubmit = async (expense) => {
+    //https://expense-manager-backend-seven.vercel.app/expenses
+    const result = await fetch(
+      "https://expense-manager-backend-seven.vercel.app/expense",
+      {
+        // const result = await fetch("http://localhost:8080/expense", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(expense),
+      }
+    );
 
-  // const defaultFormState = {
-  //   name: "",
-  //   cost: "",
-  //   category:"",
-  //   date: new Date(),
-  //   month: "",
-  //   year: "",
-  // };
+    if (result.ok) {
+      alert("Expense added");
+      const expense = await result.json();
+      console.log(expense);
+      navigate("/home");
+    } else {
+      const message = await result.text();
+      alert(message);
+    }
+  };
+
+  const defaultFormState = {
+    name: "",
+    cost: "",
+    category: "",
+    date: "",
+    month: "",
+    year: "",
+  };
 
   return (
     <div className="add-page">
@@ -48,9 +50,9 @@ const Add = (
       </div>
       <div>
         <AddExpenseForm
-          // expensesData={expensesData}
-          // handleSubmit={handleSubmit}
-          // defaultFormState={defaultFormState}
+          expense={expense}
+          handleSubmit={handleSubmit}
+          defaultFormState={defaultFormState}
         />
       </div>
       <div>
