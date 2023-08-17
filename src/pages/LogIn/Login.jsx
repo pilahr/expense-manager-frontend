@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./Login.scss";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
+import firebase from "firebase/compat/app";
+import "firebase/auth";
+import "firebase/compat/auth";
+import firebaseConfig from "../../firebase.js";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -13,15 +15,25 @@ const Login = ({ setUser }) => {
   const [errorMessage, setErrorMessage] = useState(false);
   const navigate = useNavigate();
 
+  firebase.initializeApp(firebaseConfig);
+
   const getUser = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setUser(userCredential.user);
-        navigate("/home");
+    firebase
+      .auth()
+      .setPersistence("local")
+      .then(() => {
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            setUser(user);
+            navigate("/home");
+          });
       })
+
       .catch((error) => {
         console.log(error);
-        setErrorMessage(!errorMessage);
       });
   };
 
