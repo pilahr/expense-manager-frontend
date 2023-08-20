@@ -8,12 +8,12 @@ import Report from "./pages/Report/Report";
 import Spending from "./pages/Spending/Spending";
 
 const App = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(true);
   const [expense, setExpense] = useState([]);
 
   const getExpenses = async () => {
-    // const url = "http://localhost:8080/expenses";
-    let url = "https://expense-manager-backend-seven.vercel.app/expenses";
+    const url = "http://localhost:8080/expenses";
+    // let url = "https://expense-manager-backend-seven.vercel.app/expenses";
     const res = await fetch(url);
     const data = await res.json();
     setExpense(data);

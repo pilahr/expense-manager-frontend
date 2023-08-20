@@ -51,7 +51,7 @@ const Home = ({ expense }) => {
       </div>
       <div className="home-page__container">
         <WelcomeUser />
-        <TotalSpend />
+        <TotalSpend recentlySpent={recentlySpent} />
         <div>
           <WeeklyGraph chartData={weeklyChartFormat} />
         </div>
