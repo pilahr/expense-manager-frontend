@@ -21,21 +21,97 @@ import { Chart as ChartJs } from "chart.js/auto";
 const Home = ({ expense }) => {
   const thisMonth = new Date().toDateString().split(" ")[1];
 
-  const recentlySpent = expense
-    .filter((spend) => new Date(spend.year))
-    .filter(
-      (spend) =>
-        new Date(spend.month).toDateString().split(" ")[1] === thisMonth
-    )
-    .sort((a, b) => b.date - a.date);
+  const getRecentlySpending = (expense) => {
+    return expense
+      .filter((spend) => new Date(spend.year))
+      .filter(
+        (spend) =>
+          new Date(spend.month).toDateString().split(" ")[1] === thisMonth
+      )
+      .sort((a, b) => b.date - a.date);
+  };
+  const recentlySpent = getRecentlySpending(expense);
 
-  const chartData = [45, 30, 12, 55, 70, 20, 30];
+
+  // const getFormattedData = (recentlySpent) => {
+  //   const data = [];
+  //   Object.entries(recentlySpent).map(([key, value]) => {
+  //     return data.push({
+  //       date: value["date"],
+  //       cost: value["cost"],
+  //     });
+  //   });
+  //   return data;
+  // };
+  // const formattedData = getFormattedData(recentlySpent);
+
+  // console.log(formattedData);
+
+  // Group expenses on the same date
+  const groupBy = (arr, key) => {
+    let objectValue = {};
+    return arr.reduce((acc, val) => {
+      const newObj = val[key];
+      acc[newObj] = [...(acc[newObj] || []), val];
+      return acc;
+    }, objectValue);
+  };
+  const objGroupedByRecentDate = groupBy(recentlySpent, "date");
+
+  const getDateArray = (objGroupedByRecentDate) => {
+    const datesArray = Object.keys(objGroupedByRecentDate);
+    datesArray.sort((a, b) => b - a);
+
+    let newDatesArray = [];
+    for (let i = 0; i < 7; i++) {
+      newDatesArray.push(datesArray[i] + " " + thisMonth);
+    }
+    return newDatesArray;
+  };
+
+  const getSevenDaysSpending = (objGroupedByRecentDate) => {
+    const costsArray = Object.values(objGroupedByRecentDate).sort(
+      (a, b) => b[0]["date"] - a[0]["date"]
+    );
+
+    let sevenDaysCostsArray = [];
+    let eachDayCostsArray = [];
+
+    for (let i = 0; i < 7; i++) {
+      sevenDaysCostsArray.push(costsArray[i]);
+    }
+
+
+    for (let j = 0; j < sevenDaysCostsArray.length; j++) {
+      eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
+    }
+
+
+    return eachDayCostsArray;
+  };
+  const sevenDaysSpending = getSevenDaysSpending(objGroupedByRecentDate);
+
+  // const getCostsSpending = (sevenDaysSpending) => {
+  //   let eachDayCostsArray = [];
+  //   for (let i = 0; i < sevenDaysSpending.length; i++) {
+  //     eachDayCostsArray.push(sevenDaysSpending[i][0]["cost"]);
+  //   }
+  //   console.log(eachDayCostsArray);
+
+  //   return eachDayCostsArray;
+  // };
+  // const sevenDaySpent = getCostsSpending(sevenDaysSpending);
+
+  // console.log(sevenDays[1][0]["cost"]);
+
+  // const chartData = [45, 30, 12, 55, 70, 20, 30];
+  const chartData = sevenDaysSpending;
 
   const weeklyChartFormat = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    labels: getDateArray(objGroupedByRecentDate),
     datasets: [
       {
-        label: "Total spend this week",
+        label: "Total spending (£)",
         data: chartData,
         backgroundColor: "rgba(178, 174, 174, 0.7)",
         barPercentage: 0.5,
