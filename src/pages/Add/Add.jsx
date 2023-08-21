@@ -9,10 +9,10 @@ const Add = ({ expense }) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (expense) => {
-    const result = await fetch(
-      "https://expense-manager-backend-seven.vercel.app/expense",
-      {
-    // const result = await fetch("http://localhost:8080/expense", {
+    // const result = await fetch(
+    //   "https://expense-manager-backend-seven.vercel.app/expense",
+    //   {
+    const result = await fetch("http://localhost:8080/expense", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

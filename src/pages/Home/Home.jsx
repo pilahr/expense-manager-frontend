@@ -83,7 +83,7 @@ const Home = ({ expense }) => {
 
 
     for (let j = 0; j < sevenDaysCostsArray.length; j++) {
-      eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
+      // eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
     }
 
 
