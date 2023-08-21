@@ -1,0 +1,12 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.totalMonthlyChart {
+  background-color: $color-white;
+  margin: 0 20px;
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
