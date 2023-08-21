@@ -13,7 +13,7 @@ const App = () => {
 
   const getExpenses = async () => {
     // const url = "http://localhost:8080/expenses";
-    let url = "https://expense-manager-backend-seven.vercel.app/expenses";
+    const url = "https://expense-manager-backend-seven.vercel.app/expenses";
     const res = await fetch(url);
     const data = await res.json();
     setExpense(data);

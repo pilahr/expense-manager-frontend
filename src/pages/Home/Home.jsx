@@ -172,9 +172,9 @@ const Home = ({ expense }) => {
       {
         label: "Total spending (£)",
         data: totalSpentForTheLastSevenDays,
-        backgroundColor: "rgba(178, 174, 174, 0.7)",
-        barPercentage: 0.5,
-        hoverBackgroundColor: "#FFBF00",
+        backgroundColor: "rgba(241, 163, 203, 0.8)",
+        barPercentage: 0.9,
+        hoverBackgroundColor: "rgba(244, 0, 126, 0.8)",
       },
     ],
   };
