@@ -8,7 +8,7 @@ import Report from "./pages/Report/Report";
 import Spending from "./pages/Spending/Spending";
 
 const App = () => {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState();
   const [expense, setExpense] = useState([]);
 
   const getExpenses = async () => {

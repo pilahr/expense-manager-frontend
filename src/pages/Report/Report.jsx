@@ -45,7 +45,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalAlcCost = getAlcCost(alcCostsArr);
-
+//---------------------------------------------------
   const coffeeCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Coffee")
     .map((spending) => spending.cost);
@@ -58,7 +58,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalCoffeeCost = getCoffeeCost(coffeeCostsArr);
-
+//---------------------------------------------------
   const entertainmentCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Entertainment")
     .map((spending) => spending.cost);
@@ -71,7 +71,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalEntertainmentCost = getEntertainmentCost(entertainmentCostsArr);
-
+//---------------------------------------------------
   const foodCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Food")
     .map((spending) => spending.cost);
@@ -84,7 +84,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalFoodCost = getFoodCost(foodCostsArr);
-
+//---------------------------------------------------
   const shoppingCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Shopping")
     .map((spending) => spending.cost);
@@ -97,7 +97,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalShoppingCost = getShoppingCost(shoppingCostsArr);
-
+//---------------------------------------------------
   const snackCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Snack")
     .map((spending) => spending.cost);
@@ -110,7 +110,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalSnackCost = getSnackCost(snackCostsArr);
-
+//---------------------------------------------------
   const subscriptionCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Subscription")
     .map((spending) => spending.cost);
@@ -123,7 +123,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalSubscriptionCost = getSubscriptionCost(subscriptionCostsArr);
-
+//---------------------------------------------------
   const transportationCostsArr = thisMonthSpending
     .filter((spend) => spend.category === "Transportation")
     .map((spending) => spending.cost);
@@ -136,7 +136,7 @@ const Report = ({ expense }) => {
     return sum.toFixed(2);
   };
   const totalTransportationCost = getTransportationCost(transportationCostsArr);
-
+//---------------------------------------------------
   const chartData = () => {
     let data = [];
     data.push(totalAlcCost);

@@ -32,20 +32,6 @@ const Home = ({ expense }) => {
   };
   const recentlySpent = getRecentlySpending(expense);
 
-  // const getFormattedData = (recentlySpent) => {
-  //   const data = [];
-  //   Object.entries(recentlySpent).map(([key, value]) => {
-  //     return data.push({
-  //       date: value["date"],
-  //       cost: value["cost"],
-  //     });
-  //   });
-  //   return data;
-  // };
-  // const formattedData = getFormattedData(recentlySpent);
-
-  // console.log(formattedData);
-
   // Group expenses on the same date
   const groupBy = (arr, key) => {
     let objectValue = {};
@@ -67,49 +53,125 @@ const Home = ({ expense }) => {
     }
     return newDatesArray;
   };
+  const dateArr = getDateArray(objGroupedByRecentDate);
 
-  const getSevenDaysSpending = (objGroupedByRecentDate) => {
-    const costsArray = Object.values(objGroupedByRecentDate).sort(
-      (a, b) => b[0]["date"] - a[0]["date"]
-    );
+  const cleanedDate = dateArr.map((date) => date.split(" ")[0]);
+  //['21', '20', '19', '17', '16', '14', '5']
 
-    let sevenDaysCostsArray = [];
-    let eachDayCostsArray = [];
-
-    for (let i = 0; i < 7; i++) {
-      sevenDaysCostsArray.push(costsArray[i]);
+  // TOTAL COSTS FOR THE LAST SEVEN DAYS
+  const dayOneArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[0])
+    .map((spending) => spending.cost);
+  const sumDayOne = (dayOneArr) => {
+    let sum = 0;
+    for (let i = 0; i < dayOneArr.length; i++) {
+      sum += dayOneArr[i];
     }
-
-    for (let j = 0; j < sevenDaysCostsArray.length; j++) {
-      eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
-    }
-
-    return eachDayCostsArray;
+    return sum.toFixed(2);
   };
-  const sevenDaysSpending = getSevenDaysSpending(objGroupedByRecentDate);
+  const totalDayOne = sumDayOne(dayOneArr);
 
-  // const getCostsSpending = (sevenDaysSpending) => {
-  //   let eachDayCostsArray = [];
-  //   for (let i = 0; i < sevenDaysSpending.length; i++) {
-  //     eachDayCostsArray.push(sevenDaysSpending[i][0]["cost"]);
-  //   }
-  //   console.log(eachDayCostsArray);
+  //=================================================
+  const dayTwoArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[1])
+    .map((spending) => spending.cost);
 
-  //   return eachDayCostsArray;
-  // };
-  // const sevenDaySpent = getCostsSpending(sevenDaysSpending);
+  const sumDayTwo = (dayTwoArr) => {
+    let sum = 0;
+    for (let i = 0; i < dayTwoArr.length; i++) {
+      sum += dayTwoArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDayTwo = sumDayTwo(dayTwoArr);
 
-  // console.log(sevenDays[1][0]["cost"]);
+  //=================================================
+  const dayThreeArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[2])
+    .map((spending) => spending.cost);
 
-  // const chartData = [45, 30, 12, 55, 70, 20, 30];
-  const chartData = sevenDaysSpending;
+  const sumDayThree = (dayThreeArr) => {
+    let sum = 0;
+    for (let i = 0; i < dayThreeArr.length; i++) {
+      sum += dayThreeArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDayThree = sumDayThree(dayThreeArr);
+  //=================================================
+  const dayFourArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[3])
+    .map((spending) => spending.cost);
+
+  const sumDayFour = (dayFourArr) => {
+    let sum = 0;
+    for (let i = 0; i < dayFourArr.length; i++) {
+      sum += dayFourArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDayFour = sumDayFour(dayFourArr);
+  //=================================================
+  const dayFiveArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[4])
+    .map((spending) => spending.cost);
+
+  const sumDayFive = (dayFiveArr) => {
+    let sum = 0;
+    for (let i = 0; i < dayFiveArr.length; i++) {
+      sum += dayFiveArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDayFive = sumDayFive(dayFiveArr);
+  //=================================================
+  const daySixArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[5])
+    .map((spending) => spending.cost);
+
+  const sumDaySix = (daySixArr) => {
+    let sum = 0;
+    for (let i = 0; i < daySixArr.length; i++) {
+      sum += daySixArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDaySix = sumDaySix(daySixArr);
+  //=================================================
+  const daySevenArr = recentlySpent
+    .filter((spend) => spend.date === cleanedDate[6])
+    .map((spending) => spending.cost);
+
+  const sumDaySeven = (daySevenArr) => {
+    let sum = 0;
+    for (let i = 0; i < daySevenArr.length; i++) {
+      sum += daySevenArr[i];
+    }
+    return sum.toFixed(2);
+  };
+  const totalDaySeven = sumDaySeven(daySevenArr);
+  //=================================================
+
+  const chartData = () => {
+    let data = [];
+    data.push(totalDayOne);
+    data.push(totalDayTwo);
+    data.push(totalDayThree);
+    data.push(totalDayFour);
+    data.push(totalDayFive);
+    data.push(totalDaySix);
+    data.push(totalDaySeven);
+    return data;
+  };
+
+  const totalSpentForTheLastSevenDays = chartData();
 
   const weeklyChartFormat = {
     labels: getDateArray(objGroupedByRecentDate),
     datasets: [
       {
         label: "Total spending (£)",
-        data: chartData,
+        data: totalSpentForTheLastSevenDays,
         backgroundColor: "rgba(178, 174, 174, 0.7)",
         barPercentage: 0.5,
         hoverBackgroundColor: "#FFBF00",

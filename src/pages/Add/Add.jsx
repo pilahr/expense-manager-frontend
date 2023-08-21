@@ -12,14 +12,13 @@ const Add = ({ expense }) => {
     const result = await fetch(
       "https://expense-manager-backend-seven.vercel.app/expense",
       {
-        // const result = await fetch("http://localhost:8080/expense", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(expense),
-      }
-    );
+    // const result = await fetch("http://localhost:8080/expense", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(expense),
+    });
 
     if (result.ok) {
       alert("Expense added");
