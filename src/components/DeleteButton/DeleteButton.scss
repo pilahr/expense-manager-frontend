@@ -1,0 +1,21 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.deleteButton {
+  background-color: $color-red;
+  height: 70px;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    color: $text-white;
+    text-align: center;
+    font-family: $secondary-font;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: $color-red;
+    border: none;
+  }
+}
