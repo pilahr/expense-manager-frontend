@@ -3,7 +3,7 @@ import "./Report.scss";
 import Heading from "../../components/Heading/Heading";
 import NavBar from "../../components/NavBar/NavBar";
 import DoughnutChart from "../../components/DoughnutChart/DoughnutChart";
-
+import SpendingSummary from "../../components/SpendingSummary/SpendingSummary";
 // eslint-disable-next-line
 import { Chart as ChartJs } from "chart.js/auto";
 
@@ -150,12 +150,14 @@ const Report = ({ expense }) => {
     return data;
   };
 
+  const totalSpentOnEachCategory = chartData();
+
   const data = {
     labels: categories.sort(),
     datasets: [
       {
         label: "Spent (£)",
-        data: chartData(),
+        data: totalSpentOnEachCategory,
         backgroundColor: [
           "rgb(255,192,203)",
           "rgb(135,206,250)",
@@ -177,8 +179,12 @@ const Report = ({ expense }) => {
         <Heading title="Report" />
       </div>
       <div className="report-page__main">
-        <h2 className="report-page__main--text">{thisMonth} Spending</h2>
+        <h2 className="report-page__main--text">{thisMonth.toUpperCase()} SPENDING</h2>
         <DoughnutChart data={data} />
+        <SpendingSummary
+          totalSpentOnEachCategory={totalSpentOnEachCategory}
+          categories={categories.sort()}
+        />
       </div>
       <div>
         <NavBar />

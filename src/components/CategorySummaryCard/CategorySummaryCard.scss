@@ -1,0 +1,42 @@
+@use "../../styles/main" as *;
+@use "../../styles/variables" as *;
+
+.categorySummaryCard {
+  background-color: $color-white;
+  width: 320px;
+  height: 80px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $color-gray;
+
+  &__icon {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+
+    &--icon {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  &__main {
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--text-p {
+      text-align: left;
+      font-family: $secondary-font;
+      font-size: 1.2rem;
+    }
+
+    &--text-h2 {
+      text-align: right;
+      font-weight: 500;
+    }
+  }
+}

@@ -15,9 +15,16 @@
   height: 100vh;
 
   &__main {
+    height: 100%;
+    padding-bottom: 200px;
+    overflow-y: scroll;
+    background-color: $color-white-translucent;
+    border-radius: 10px;
+    margin: 20px;
     &--text {
       text-align: center;
       color: $text-gray;
+      font-family: $secondary-font;
     }
   }
 }
