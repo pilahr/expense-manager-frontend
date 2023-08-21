@@ -12,8 +12,8 @@ const App = () => {
   const [expense, setExpense] = useState([]);
 
   const getExpenses = async () => {
-    const url = "http://localhost:8080/expenses";
-    // let url = "https://expense-manager-backend-seven.vercel.app/expenses";
+    // const url = "http://localhost:8080/expenses";
+    let url = "https://expense-manager-backend-seven.vercel.app/expenses";
     const res = await fetch(url);
     const data = await res.json();
     setExpense(data);

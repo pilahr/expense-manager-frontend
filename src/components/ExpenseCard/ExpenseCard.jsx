@@ -53,8 +53,8 @@ const ExpenseCard = ({
   // }, [id]);
 
   const handleDelete = async () => {
-    const url = `http://localhost:8080/expense/${id}`;
-    // const url = `https://expense-manager-backend-seven.vercel.app/expense/${id}`;
+    // const url = `http://localhost:8080/expense/${id}`;
+    const url = `https://expense-manager-backend-seven.vercel.app/expense/${id}`;
     const result = await fetch(url, {
       method: "DELETE",
       headers: {

@@ -32,7 +32,6 @@ const Home = ({ expense }) => {
   };
   const recentlySpent = getRecentlySpending(expense);
 
-
   // const getFormattedData = (recentlySpent) => {
   //   const data = [];
   //   Object.entries(recentlySpent).map(([key, value]) => {
@@ -81,11 +80,9 @@ const Home = ({ expense }) => {
       sevenDaysCostsArray.push(costsArray[i]);
     }
 
-
     for (let j = 0; j < sevenDaysCostsArray.length; j++) {
-      // eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
+      eachDayCostsArray.push(sevenDaysCostsArray[j][0]["cost"]);
     }
-
 
     return eachDayCostsArray;
   };
