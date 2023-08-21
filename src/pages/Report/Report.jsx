@@ -179,7 +179,9 @@ const Report = ({ expense }) => {
         <Heading title="Report" />
       </div>
       <div className="report-page__main">
-        <h2 className="report-page__main--text">{thisMonth.toUpperCase()} SPENDING</h2>
+        <h2 className="report-page__main--text">
+          {thisMonth.toUpperCase()} SPENDING
+        </h2>
         <DoughnutChart data={data} />
         <SpendingSummary
           totalSpentOnEachCategory={totalSpentOnEachCategory}
