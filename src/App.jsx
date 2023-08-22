@@ -6,10 +6,14 @@ import Home from "./pages/Home/Home";
 import Add from "./pages/Add/Add";
 import Report from "./pages/Report/Report";
 import Spending from "./pages/Spending/Spending";
+import firebase from "firebase/compat/app";
+import firebaseConfig from "./firebase.js";
 
 const App = () => {
+  firebase.initializeApp(firebaseConfig);
   const [user, setUser] = useState();
   const [expense, setExpense] = useState([]);
+  const [pending, setPending] = useState(true);
 
   const getExpenses = async () => {
     // const url = "http://localhost:8080/expenses";
@@ -20,15 +24,23 @@ const App = () => {
   };
 
   useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      setUser(user);
+      setPending(false);
+    });
     getExpenses();
     // eslint-disable-next-line
   }, []);
+
+  if (pending) {
+    return <>Loading..</>;
+  }
 
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<LogIn setUser={setUser} />} />
+          <Route path="/" element={<LogIn setUser={setUser} user={user} />} />
         </Routes>
 
         {user && expense && (

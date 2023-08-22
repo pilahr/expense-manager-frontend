@@ -9,7 +9,7 @@ import "firebase/auth";
 import "firebase/compat/auth";
 import firebaseConfig from "../../firebase.js";
 
-const Login = ({ setUser }) => {
+const Login = ({ setUser, user }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(false);
@@ -17,7 +17,7 @@ const Login = ({ setUser }) => {
 
   firebase.initializeApp(firebaseConfig);
 
-  const getUser = () => {
+  const getUser = async () => {
     firebase
       .auth()
       .setPersistence("local")
