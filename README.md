@@ -1,71 +1,39 @@
-# Getting Started with Create React App
+#Expense Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![34078961-B4CB-42EB-85B4-F6EC1C7063D5_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/0ae5cd9d-f611-4562-93f8-d3d4fd742437)
 
-## Available Scripts
+![EC32ECA1-3AC3-47A7-BB2A-AA187A228781_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/1cd087b4-319a-4037-8742-daa758367d4a)
 
-In the project directory, you can run:
+![01E7B99B-1233-4D0D-8875-2182E008E3B4_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/ce984283-12b2-4846-8b25-6db242cc3ffb)
 
-### `npm start`
+![F3B4EB5A-0CB2-4717-B925-8B8A48BF57FE_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/1b6b8889-94e5-46c2-a2ca-0ef4af7a1ce1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![32D1DB70-F5D0-40FB-B56D-9CD607E965E1_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/a33359ba-4525-45e0-a0c6-6addb06ce47e)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![85E2A7AB-2F64-4F62-9242-0959A562FFE6_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/abb20392-be05-4d00-bc1f-aeea5c4db774)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Live Demo[https://expense-manager-frontend-e1ae8.web.app]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Backend Code[https://github.com/pilahr/my-journey-new-backend]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+###Full Stack project mobile phone application which allows me to log in and add a daily expenses
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###MockUser: piyablog11@gmail.com 
+###Password: 123456 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###Front-end created in REACT, using chart js2 for the chart with Firebase Log in authentication and hosting through gitHub action. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+###Back-end and URL endpoints for API created with nodeJs framework, connected to non-relational database (MongoDb) and hosted on Vercel. 
+The user can log in to add and view the daily expenses.
+Homepage : contains summary of total spending of this month with a bar chart showing the last 7 days spending with the details of the recent spending
 
-## Learn More
+Add page: user can add the expense with a cost, category and the date of spending
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Spending page: user can view the bar chart showing summarisation of the last 6 months of spending with all the spening details
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# expense-manager-frontend
+Report page: user can view summarisation of the recent month spening by category on both doughtnut chart and the detail break down in the tab
