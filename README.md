@@ -17,7 +17,9 @@
 
 ## [Live Demo](https://expense-manager-frontend-e1ae8.web.app)
 
-## [Backend Code](https://github.com/pilahr/my-journey-new-backend)
+## [Backend Code](https://github.com/pilahr/expense-manager-backend)
+
+## [Live Data](https://expense-manager-backend-seven.vercel.app/expenses)
 
 
 ### Full Stack project mobile phone application which allows me to log in and add a daily expenses
