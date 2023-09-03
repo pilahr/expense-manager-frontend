@@ -1,4 +1,4 @@
-#Expense Manager
+# Expense Manager
 
 ![34078961-B4CB-42EB-85B4-F6EC1C7063D5_4_5005_c](https://github.com/pilahr/expense-manager-frontend/assets/125895065/0ae5cd9d-f611-4562-93f8-d3d4fd742437)
 
@@ -15,25 +15,32 @@
 
 
 
-##Live Demo[https://expense-manager-frontend-e1ae8.web.app]
+## [Live Demo](https://expense-manager-frontend-e1ae8.web.app)
 
-##Backend Code[https://github.com/pilahr/my-journey-new-backend]
-
-
-###Full Stack project mobile phone application which allows me to log in and add a daily expenses
+## [Backend Code](https://github.com/pilahr/my-journey-new-backend)
 
 
-###MockUser: piyablog11@gmail.com 
-###Password: 123456 
+### Full Stack project mobile phone application which allows me to log in and add a daily expenses
 
-###Front-end created in REACT, using chart js2 for the chart with Firebase Log in authentication and hosting through gitHub action. 
 
-###Back-end and URL endpoints for API created with nodeJs framework, connected to non-relational database (MongoDb) and hosted on Vercel. 
+### MockUser: piyablog11@gmail.com 
+### Password: 123456 
+
+### Front-end 
+created in REACT, using chart js2 for the chart with Firebase Log in authentication and hosting through gitHub action. 
+
+### Back-end and URL endpoints for API 
+created with nodeJs framework, connected to non-relational database (MongoDb) and hosted on Vercel. 
 The user can log in to add and view the daily expenses.
-Homepage : contains summary of total spending of this month with a bar chart showing the last 7 days spending with the details of the recent spending
 
-Add page: user can add the expense with a cost, category and the date of spending
+### Homepage : 
+contains summary of total spending of this month with a bar chart showing the last 7 days spending with the details of the recent spending
 
-Spending page: user can view the bar chart showing summarisation of the last 6 months of spending with all the spening details
+### Add page: 
+user can add the expense with a cost, category and the date of spending
 
-Report page: user can view summarisation of the recent month spening by category on both doughtnut chart and the detail break down in the tab
+### Spending page: 
+user can view the bar chart showing summarisation of the last 6 months of spending with all the spening details
+
+### Report page: 
+user can view summarisation of the recent month spening by category on both doughtnut chart and the detail break down in the tab
